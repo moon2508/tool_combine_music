@@ -2,16 +2,61 @@
 <html>
 <head>
     <title>Automatic Music Merge</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    h1 {
+        
+        font-size: 150%;
+        text-align: center;
+      }
+    body{
+        background-color: powderblue;
+        
+    }
+    .container{
+        border-style: double;
+        margin:36px 240px;
+        
+    }
+    form{
+        margin: 48px 100px;
+    }
+    .button{
+        height: 50px;
+        width: 200px;
+        margin: 16px 20px ;
+        font-size: 24px;
+        background-color: yellow
+        
+
+    }
+</style>
 <body>
-    <h1>Automatic Music Merge</h1>
-    <form action="/merge" method="post">
-        <label for="music_files">Select a file:</label>
-<input type="file" id="music_files" name="music_files">
-        <input type="checkbox" name="music_files" value="test2.mp3"> Song 1<br>
-        <input type="checkbox" name="music_files" value="test3.mp3"> Song 2<br>
-        <input type="checkbox" name="music_files" value="test4.mp3"> Song 3<br>
-        <input type="submit" value="Merge">
-    </form>
+    <h1> TOOL Automatic Music Merge</h1>
+    <div class= 'container' > 
+       
+        <form action="/merge" method="post" >
+            <p>Bạn hãy chọn các file cần merge:</p>
+            <label for="music_files">Select a file:</label>
+            <input type="file" id="music_files" name="music_files"multiple="multiple" required>
+            <p>Bạn hãy chọn định dạng file xuất ra: </p>
+            <label for="format_files">Format file export</label>
+    
+            <select name="format_files" id="format_files" required>
+            <option value="mp3">mp3</option>
+            <option value="mp4">mp4</option>
+            <option value="wav">wav</option>
+            
+            </select> <br>
+            <p> Bạn hãy điền tên file mà bạn mong muốn xuất </p>
+            <label for="music_files">Fill a name file export </label>
+            <input type = 'text' id='name_file_export' name = 'name_file_export' required>
+    
+           <br> <input type="submit" value="Xác nhận" class = "button">
+        </form>
+    </div>
+
+   
 </body>
 </html>

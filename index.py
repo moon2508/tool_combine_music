@@ -7,15 +7,15 @@ def run_ffmpeg_command(command):
 
 # Hàm để ghép các bài nhạc lại với nhau và tạo file MP3 và file TXT
 def concatenate_music_files(music_files, output_file):
-    time_run = datetime.strptime('00:00:00', '%H:%M:%S')
+    time_run = datetime.strptime('00:00', '%H:%M')
     with open('list.txt', 'w') as f:
         for file in music_files:
             duration = get_audio_duration(file)
-            formatted_time = time_run.strftime('%H:%M:%S')
+            formatted_time = time_run.strftime('%H:%M')
             f.write(f"{formatted_time} - {file}\n")
             time_run += timedelta(seconds=duration)
             
-    command = f'ffmpeg -f concat -i list.txt -c copy {output_file}'
+    command = f'ffmpeg -f concat -i list1.txt -c copy {output_file}'
     run_ffmpeg_command(command)
 
 # Hàm để lấy thời lượng của file âm thanh
